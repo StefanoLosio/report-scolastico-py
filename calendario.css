@@ -1,0 +1,117 @@
+#contenitore {
+    background: transparent;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* --- INTESTAZIONE (mese/anno + bottoni) --- */
+#data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#mese {
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+#anno {
+    font-size: 1.2rem;
+    color: #777;
+}
+
+#oggi {
+    border: none;
+    height: 40px;
+    border-radius: 10px;
+    padding: 0 1rem;
+    background: #2563eb;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+#oggi:hover {
+    background: #1e40af;
+}
+
+#precedente, #successivo {
+    background: #e5e7eb;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#precedente, #successivo:hover {
+    background: #d1d5db;
+    transform: scale(1.05);
+}
+
+/* Icone precedenti/successivi */
+#precedente::before {
+    content: "◀";
+}
+#successivo::before {
+    content: "▶";
+}
+
+/* --- GIORNI DELLA SETTIMANA --- */
+#giorni {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: #2564eb9c;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#giorni div {
+    padding: 0.8rem 0;
+    border-right: 1px solid rgba(255,255,255,0.2);
+}
+#giorni div:last-child {
+    border-right: none;
+}
+
+/* --- TABELLA GIORNI DEL MESE --- */
+#tabella {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    
+    gap: 5px;
+}
+
+#tabella div {
+    padding: 0.8rem 0;
+    border-radius: 10px;
+    transition: 0.2s;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+#tabella div:hover {
+    background: #e0e7ff;
+}
+
+/* Giorni nascosti (del mese precedente o successivo) */
+.nascondi {
+    color: #aaa;
+}
+
+/* Giorno corrente (puoi aggiungerlo dinamicamente via JS se vuoi) */
+.giornoOggi {
+    background: #2563eb;
+    color: white;
+    font-weight: bold;
+}
