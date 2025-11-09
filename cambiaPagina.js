@@ -15,12 +15,12 @@ const contenuto = document.getElementById("contenuto");
 function assegnazioni() {
     contenuto.innerHTML = `
         <div id="contenitore">
-            <div style="display: flex; flex-direction: row; justify-content: center; gap: 10vw; align-items: center;">
+            <div style="display: flex; flex-direction: row; justify-content: space-between; gap: 10px; align-items: center;">
                 <div id="data"><div id="mese"></div><div id="anno"></div></div>
                 <div id="cambiaMese">
-                    <button id="precedente"></button>
+                    <button id="precedente">◀</button>
                     <button id="oggi">oggi</button>
-                    <button id="successivo"></button>
+                    <button id="successivo">▶</button>
                 </div>
             </div>
             <div id="giorni">
@@ -41,7 +41,7 @@ function assegnazioni() {
             </ul>
         </div>
     `;
-
-    ricaricaScript("calendario.js");
+    
     ricaricaScript("visualizzaEventi.js"); 
+    ricaricaScript("calendario.js");
 };

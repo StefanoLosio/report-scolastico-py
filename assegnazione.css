@@ -1,0 +1,264 @@
+/* =======================
+   VARIABILI GLOBALI
+   ======================= */
+:root {
+    --bg-dark: #0d0d0d;          /* sfondo scuro profondo */
+    --bg-gradient: #0a0a0a;      /* sfondo secondario */
+    --accent-neon: #ff00ff;      /* neon magenta */
+    --accent-blue: #00ffff;      /* neon cyan */
+    --glass-white: rgba(255, 255, 255, 0.1);
+    --text-color: #ffffff;
+    --input-bg: rgba(255, 255, 255, 0.05);
+}
+
+/* =======================
+   RESET E BASE
+   ======================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Alan Sans', Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+    background: linear-gradient(135deg, var(--bg-gradient), var(--bg-dark));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* =======================
+   SFONDO ANIMATO NEON
+   ======================= */
+body::before {
+    content: "";
+    position: fixed;
+    top: -18%;
+    left: -10%;
+    width: 120%;
+    height: 60vh;
+    background:
+        radial-gradient(closest-side at 20% 25%, rgba(255,0,255,0.2), transparent 22%),
+        radial-gradient(closest-side at 80% 75%, rgba(0,255,255,0.15), transparent 22%);
+    filter: blur(60px) saturate(150%);
+    z-index: 0;
+    pointer-events: none;
+    animation: float 12s ease-in-out infinite alternate;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    right: -8%;
+    bottom: -12%;
+    width: 110%;
+    height: 50vh;
+    background: linear-gradient(90deg, rgba(255,255,255,0.05), rgba(0,0,0,0.05));
+    mix-blend-mode: overlay;
+    filter: blur(18px) saturate(120%);
+    z-index: 0;
+    pointer-events: none;
+    animation: float 16s linear infinite reverse;
+}
+
+/* =======================
+   MAIN E STRUTTURA
+   ======================= */
+main {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+/* TITOLO PRINCIPALE */
+#titolo {
+    width: 100%;
+    height: 12vh;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    font-size: calc(2rem + 2vw);
+    color: var(--accent-neon);
+    gap: 0.75rem;
+    text-shadow: 0 0 8px var(--accent-neon), 0 0 16px var(--accent-neon);
+}
+
+/* CONTENUTO */
+#contenuto {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: row;
+}
+
+/* =======================
+   FORM STILE NEON
+   ======================= */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: rgba(255,255,255,0.05); /* glass effect */
+    padding: 1.5rem;
+    border-radius: 12px;
+    backdrop-filter: blur(12px) saturate(120%);
+    border: 1px solid var(--glass-white);
+    box-shadow: 0 0 12px rgba(255,0,255,0.2), 0 0 24px rgba(0,255,255,0.15);
+}
+
+label {
+    font-weight: 500;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: var(--input-bg);
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: border 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent-neon);
+    box-shadow: 0 0 12px var(--accent-neon);
+    background: rgba(255,255,255,0.12);
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+button {
+    cursor: pointer;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    border: none;
+    background: linear-gradient(135deg, var(--accent-neon), var(--accent-blue));
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 0 12px var(--accent-neon), 0 0 20px var(--accent-blue);
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px var(--accent-neon), 0 0 28px var(--accent-blue);
+}
+
+button:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+/* =======================
+   LISTA EVENTI / AGENDA
+   ======================= */
+#agenda {
+    list-style: none;
+    margin-top: 1rem;
+    padding-left: 0;
+}
+
+#agenda li {
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.05);
+    margin-bottom: 0.5rem;
+    box-shadow: 0 0 6px var(--accent-neon), 0 0 10px var(--accent-blue);
+}
+
+/* =======================
+   BARRA NAVIGAZIONE NEON
+   ======================= */
+#barra_navigazione {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    width: min(680px, 92%);
+    max-width: 680px;
+    height: 64px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(0,0,0,0.25);
+    border: 1px solid var(--accent-neon);
+    box-shadow: 0 0 12px var(--accent-neon), inset 0 0 6px rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px) saturate(120%);
+    -webkit-backdrop-filter: blur(12px) saturate(120%);
+    z-index: 40;
+}
+
+.icona {
+    appearance: none;
+    border: 0;
+    cursor: pointer;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(180deg, rgba(255,0,255,0.9), rgba(0,255,255,0.9));
+    color: #fff;
+    font-size: 1.4rem;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    box-shadow: 0 0 10px var(--accent-neon), 0 0 16px var(--accent-blue);
+}
+
+.icona:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 18px var(--accent-neon), 0 0 24px var(--accent-blue);
+}
+
+.icona:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+.icona:focus {
+    outline: 3px solid rgba(255,0,255,0.5);
+    outline-offset: 4px;
+}
+
+/* =======================
+   RESPONSIVE
+   ======================= */
+@media (max-width: 600px) {
+    #barra_navigazione { height: 72px; padding: 10px; gap: 10px; }
+    .icona { width: 60px; height: 60px; font-size: 1.6rem; }
+}
+
+@media (max-width: 420px) {
+    #barra_navigazione { width: 92%; bottom: 16px; }
+    .icona { width: 64px; height: 64px; }
+}
+
+@media (max-height:520px) {
+    #contenuto { padding-bottom: 96px; }
+}
+
+/* =======================
+   ANIMAZIONI
+   ======================= */
+@keyframes float {
+    from { transform: translateY(0) rotate(0deg); }
+    to { transform: translateY(-28px) rotate(3deg); }
+}

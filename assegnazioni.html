@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Nuova Assegnazione</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assegnazione.css">
+        <link href="https://fonts.googleapis.com/css2?family=Alan+Sans&amp;display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <main>
+            <div id="titolo">Studium</div>
+            <div id="contenuto">
+                <form id="form_assegnazione">
+                    <label for="materia">Materia:</label>
+                    <input type="text" id="materia" name="materia" required><br><br>
+                    <label for="data">Data (gg-mm-aaaa):</label>
+                    <input type="text" id="data" name="data" required><br><br>
+                    <label for="tipo_assegnazione">Tipo di Assegnazione:</label>
+                    <select id="tipo_assegnazione" name="tipo_assegnazione" required>
+                        <option value="compito">Compito</option>
+                        <option value="verifica">Verifica</option>
+                        <option value="interrogazione">interrogazione</option>
+                    </select><br><br>
+                    <label for="descrizione">Descrizione:</label>
+                    <textarea id="descrizione" name="descrizione" required></textarea><br><br>
+                    <button type="button">Conferma</button>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>

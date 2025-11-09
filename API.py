@@ -11,7 +11,7 @@ class api_primaria:
     def getAssegnazioni (self, dataEvento:str):
         eventi=[]
         for i in self.agenda:
-            if i["data"]==dataEvento:
+            if i["Data"]==dataEvento:
                 eventi.append(i)
         return eventi
     

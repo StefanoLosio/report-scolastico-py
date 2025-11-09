@@ -2,7 +2,7 @@ import webview
 from API import api_primaria
 
 registro_voti=[]
-agenda=[]
+agenda=[{'Materia':'Mate', 'Data':'8-6-2025', 'Descrizione':'Compito pag 125 es dal 2 al 15'},]
 
 apiFinestra = api_primaria(registro_voti, agenda)
 
