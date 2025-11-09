@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="style.css">
         <link href="https://fonts.googleapis.com/css2?family=Alan+Sans&amp;display=swap" rel="stylesheet">
         <link rel="stylesheet" href="calendario.css">
+        <script src="cambiaPagina.js" defer></script>
     </head>
     <body>
         <main>
@@ -20,45 +21,3 @@
         </main>
     </body>
 </html>
-<script>
-        const assegnazioni = document.getElementById("assegnazioni");
-        const home = document.getElementById("home");
-        const voti = document.getElementById("voti");
-        const contenuto = document.getElementById("contenuto");
-
-        assegnazioni.addEventListener("click", function() {
-            contenuto.innerHTML = `
-                <div id="contenitore">
-                    <div style="display: flex; flex-direction: row; justify-content: center; gap: 10vw; align-items: center;">
-                        <div id="data"><div id="mese"></div><div id="anno"></div></div>
-                        <div id="cambiaMese">
-                            <button id="precedente"></button>
-                            <button id="oggi">oggi</button>
-                            <button id="successivo"></button>
-                        </div>
-                    </div>
-                    <div id="giorni">
-                        <div>Lun</div>
-                        <div>Mar</div>
-                        <div>Mer</div>
-                        <div>Gio</div>
-                        <div>Ven</div>
-                        <div>Sab</div>
-                        <div>Dom</div>
-                    </div>
-                    <div id="tabella"></div>
-                </div>
-                <div id="note">
-                    <h2>Note</h2>
-                    <ul id="agenda">
-                        Nessun evento per oggi.
-                    </ul>
-                </div>
-            `;
-
-            const script = document.createElement("script");
-            script.src = "calendario.js";
-            script.defer = true;
-            document.body.appendChild(script);
-        });
-</script>

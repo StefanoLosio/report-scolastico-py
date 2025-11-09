@@ -105,12 +105,12 @@
 }
 
 /* Giorni nascosti (del mese precedente o successivo) */
-.nascondi {
+#nascondi {
     color: #aaa;
 }
 
 /* Giorno corrente (puoi aggiungerlo dinamicamente via JS se vuoi) */
-.giornoOggi {
+#giornoOggi {
     background: #2563eb;
     color: white;
     font-weight: bold;

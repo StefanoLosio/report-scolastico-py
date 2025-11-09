@@ -1,11 +1,19 @@
 import webview
 
 class api_primaria:
-    def __init__(self, registro:list):
+    def __init__(self, registro:list, agenda:list):
         self.registro=registro
+        self.agenda=agenda
     
     def getVoti (self):
         return self.registro
+    
+    def getAssegnazioni (self, dataEvento:str):
+        eventi=[]
+        for i in self.agenda:
+            if i["data"]==dataEvento:
+                eventi.append(i)
+        return eventi
     
     def aggiungiVoto(self, voto:dict):
         self.registro.append(voto)
@@ -33,6 +41,10 @@ class api_primaria:
             i=i+1
             db_voti.write(f'{voto["id"]};{voto["voto"]};{voto["descrizione"]};{voto["data"]};{voto["materia"]}\n')
         db_voti.close()
+
+    def apriInsersciVoto(self, type:str):
+        api_sec=api_secondaria(self.registro)
+        api_sec.apriSubWindow("inserimento")
                 
 
 class api_secondaria:
