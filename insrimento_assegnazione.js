@@ -12,7 +12,12 @@
 
         // ✅ Gestione data
         const oggi = new Date();
-        const dataInserita = new Date(data);
+
+        const [giorno, mese, anno] = data.split("-");
+        dataInserita = new Date(`${anno}-${mese}-${giorno}`);
+
+        console.log(dataInserita);
+        
 
         if (!data) {
             alert("Devi selezionare una data!");
