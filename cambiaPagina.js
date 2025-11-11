@@ -34,14 +34,17 @@ function assegnazioni() {
             </div>
             <div id="tabella"></div>
         </div>
-        <div id="note">
-            <h2>Note</h2>
-            <ul id="agenda">
-                Nessun evento per oggi.
-            </ul>
+        <div style="width: 30%; height: 50%; display: flex; flex-direction:column; gap: 20px;">
+            <button id="nuova_assegnazione">nuova assegnazione +</button>
+            <div id="note">
+                <h2>Note</h2>
+                <ul id="agenda">
+                </ul>
+            </div>
         </div>
     `;
     
     ricaricaScript("visualizzaEventi.js"); 
     ricaricaScript("calendario.js");
+    ricaricaScript("form.js");
 };

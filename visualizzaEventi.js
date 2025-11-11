@@ -4,6 +4,7 @@ async function visualizzaEventi(dataEvento) {
     const listaEventi = await window.pywebview.api.getAssegnazioni(dataEvento);
 
     if (!listaEventi || listaEventi.length === 0) {
+        agenda.innerHTML = "Nessun evento per oggi.";
         return;
     }
 

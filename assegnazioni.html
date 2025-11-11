@@ -6,6 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="assegnazione.css">
         <link href="https://fonts.googleapis.com/css2?family=Alan+Sans&amp;display=swap" rel="stylesheet">
+        <script src="insrimento_assegnazione.js" defer></script>
+
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     </head>
     <body>
         <main>
@@ -23,10 +28,17 @@
                         <option value="interrogazione">interrogazione</option>
                     </select><br><br>
                     <label for="descrizione">Descrizione:</label>
-                    <textarea id="descrizione" name="descrizione" required></textarea><br><br>
-                    <button type="button">Conferma</button>
+                    <textarea id="descrizione" name="descrizione"></textarea><br><br>
+                    <button type="button" id="inserisci">Conferma</button>
                 </form>
             </div>
         </main>
     </body>
 </html>
+<script>
+    $(function() {
+    $("#data").datepicker({
+        dateFormat: "dd-mm-yy"
+    });
+  });
+</script>
